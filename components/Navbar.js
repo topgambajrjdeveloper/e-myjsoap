@@ -3,7 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import Link from 'next/link'
 import ThemeToggle from 'components/ThemeToggle';
 
-const BlogNavbar = ({theme, toggleTheme}) => {
+const BlogNavbar = ({ theme, toggleTheme }) => {
   return (
     <Navbar
       variant={theme.type}
@@ -29,12 +29,12 @@ const BlogNavbar = ({theme, toggleTheme}) => {
           />
           <Nav.Link
             as={() =>
-              <Link href='https://sanity-api-soap.vercel.app' prefetch={false} target='_blank'>
-                <a className="fj-navbar-item fj-navbar-link">ADMINISTRAR</a>
+              <Link href='https://sanity-api-soap.vercel.app' prefetch={false} >
+                <a target='_blank' rel="noopener noreferrer" className="fj-navbar-item fj-navbar-link">ADMINISTRAR</a>
               </Link>
             }
           />
-          
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>
