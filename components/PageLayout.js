@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useTheme } from 'providers/ThemeProvider';
+import SharedButtons from './SharedButtons';
 
 export default function PageLayout({ title,children, className, ...customMeta }) {
   const { theme, toggleTheme } = useTheme();
@@ -60,7 +61,6 @@ export default function PageLayout({ title,children, className, ...customMeta })
               © {yearTxt} <a href="https://dev-cordenadas.xyz/" target="_blank">Developed by DevCordenadas</a>{' | '}
               <a href="https://twitter.com/myjsoap" target="_blank">Twitter</a>
               <br />
-                
             </div>
           </footer>
         </Container>
