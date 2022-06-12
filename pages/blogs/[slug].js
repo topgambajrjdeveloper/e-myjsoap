@@ -63,7 +63,7 @@ const BlogDetail = ({ blog: initialBlog, preview }) => {
             <div className="alert alert-primary text-center"><h4>Mas información: <br /> {blog.gramos} </h4></div>
             <div className="alert alert-primary text-center">{"  "} Si te gusta puedes comprar el producto aquí:{" "}{"  "}
               <button className="btn btn-light">
-                <a target="_blank" href={`https://wa.me/send?phone=34649599475&text=https://myjsoap.xyz${router.asPath}`}><h3>Comprar {blog.price}€</h3></a>
+                <a target="_blank" href={`https://wa.me/send?phone=34649599475&text=https://myjsoap.xyz${router.asPath}`}><h3>Comprar{" "} {blog.price}€</h3></a>
               </button>
             </div>
           </>
