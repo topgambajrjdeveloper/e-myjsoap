@@ -1,9 +1,12 @@
-
-import { Card } from 'react-bootstrap';
+import { useState } from 'react';
+import { Card, Badge } from 'react-bootstrap';
 import Link from 'next/link';
 import { urlFor } from 'lib/api';
+import CategoriesTag from './CategoriesTag';
 
-const CardItem = ({ title, subtitle, image, date, author, link, mode = 'normal'}) => {
+const CardItem = ({ title, category, subtitle, image, date, author, link, mode = 'normal' }) => {
+
+
   return (
     <Card className={`fj-card ${mode}`}>
       <div className={`card-body-wrapper ${!image ? 'no-image' : ''}`}>
@@ -14,7 +17,7 @@ const CardItem = ({ title, subtitle, image, date, author, link, mode = 'normal'}
             className="rounded-circle mr-3"
             height="50px"
             width="50px"
-            alt="avatar"/>
+            alt="avatar" />
           <div>
             {
               mode === 'placeholder' ?
@@ -22,7 +25,7 @@ const CardItem = ({ title, subtitle, image, date, author, link, mode = 'normal'}
                   <Card.Title className="font-weight-bold mb-1">Placeholder Title</Card.Title>
                   <Card.Text className="card-date">Placeholder Date</Card.Text>
                 </>
-              :
+                :
                 <>
                   <Card.Title className="font-weight-bold mb-1">{author?.name}</Card.Title>
                   <Card.Text className="card-date">{date}</Card.Text>
@@ -31,19 +34,19 @@ const CardItem = ({ title, subtitle, image, date, author, link, mode = 'normal'}
           </div>
         </Card.Header>
         <div className="view overlay">
-          { mode === 'placeholder' ?
+          {mode === 'placeholder' ?
             <div className="image-placeholder align-self-center" />
             :
             image &&
-              <Card.Img
-                src={
-                  urlFor(image)
-                    .height(300)
-                    .url()}
+            <Card.Img
+              src={
+                urlFor(image)
+                  .height(300)
+                  .url()}
               alt={title}
               title={title}
-              style={{ width: '18rem'}}
-              />
+              style={{ width: '18rem' }}
+            />
           }
         </div>
         <Card.Body>
@@ -52,9 +55,9 @@ const CardItem = ({ title, subtitle, image, date, author, link, mode = 'normal'}
               <>
                 <Card.Title className="card-main-title">Placeholder Title</Card.Title>
                 <Card.Text>Placeholder Subtitle</Card.Text>
-                <Card.Text>Placeholder Price</Card.Text>
+                <Card.Text>Placeholder Cat</Card.Text>
               </>
-            :
+              :
               <>
                 <Card.Title className="card-main-title">{
                   title.length > 40 ?
@@ -62,11 +65,18 @@ const CardItem = ({ title, subtitle, image, date, author, link, mode = 'normal'}
                 <Card.Text>{
                   subtitle.length > 40 ?
                     subtitle.substr(0, 40) + '[...]' : subtitle}</Card.Text>
+                <Card.Text>
+                  <Link href={`/categorie/${category}`}>
+                    <a>
+                      <CategoriesTag category={category} />
+                    </a>
+                  </Link>
+                </Card.Text>
               </>
-            }
+          }
         </Card.Body>
       </div>
-      { link &&
+      {link &&
         <Link {...link}>
           <a className="card-button">
             Lee mas

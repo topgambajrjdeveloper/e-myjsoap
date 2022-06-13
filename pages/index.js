@@ -26,6 +26,7 @@ export const BlogList = ({data = [], filter}) => {
           title={blog.title}
           subtitle={blog.subtitle}
           date={moment(blog.date).format('LL')}
+          category={blog.category}
           link={{
             href: '/blogs/[slug]',
             as: `/blogs/${blog.slug}`
@@ -39,6 +40,7 @@ export const BlogList = ({data = [], filter}) => {
           title={blog.title}
           subtitle={blog.subtitle}
           date={moment(blog.date).format('LL')}
+          category={blog.category}
           image={blog.coverImage}
           link={{
             href: '/blogs/[slug]',

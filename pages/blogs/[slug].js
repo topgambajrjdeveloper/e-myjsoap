@@ -11,11 +11,12 @@ import { useRouter } from 'next/router';
 
 import BlogContent from 'components/BlogContent';
 import PreviewAlert from 'components/PreviewAlert';
+import NextBreadcrumbs from 'components/NextBreadcrumbs';
 
 const BlogDetail = ({ blog: initialBlog, preview }) => {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
-
+  
   useEffect(() => {
     let sub;
     if (preview) {
@@ -44,6 +45,7 @@ const BlogDetail = ({ blog: initialBlog, preview }) => {
     <PageLayout className="blog-detail-page">
       <Row>
         <Col md={{ span: 10, offset: 1 }}>
+          <NextBreadcrumbs title={blog.title} />
           {preview && <PreviewAlert />}
 
           <BlogHeader

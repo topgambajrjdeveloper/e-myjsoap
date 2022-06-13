@@ -19,7 +19,7 @@ const FilteringMenu = ({onChange, filter}) => {
         size="2x"
         icon={DATE_FILTERING_ICONS[filter.date.asc]}
         onClick={() =>
-          onChange('date', {asc: +!filter.date.asc })} />
+          onChange('date', { asc: +!filter.date.asc })} />
     </div>
   )
 }

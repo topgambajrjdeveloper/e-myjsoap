@@ -1,5 +1,5 @@
 
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
 import Link from 'next/link'
 import ThemeToggle from 'components/ThemeToggle';
 
@@ -34,7 +34,6 @@ const BlogNavbar = ({ theme, toggleTheme }) => {
               </Link>
             }
           />
-
         </Nav>
       </Navbar.Collapse>
     </Navbar>
