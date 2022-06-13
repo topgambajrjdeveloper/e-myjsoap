@@ -19,7 +19,7 @@ const AuthorIntro = ({ about }) =>
           <h5 className="font-weight-bold mb-0">Bienvenidos a M&JSoap´s,</h5>
           <p className="welcome-text">
             Blog de champús y jabones de elaboración artesanal, aceites, higiene personal, cuidado de la piel y el cabello. <br />
-            <a target="_blank" href="https://wa.me/34649599475?text=Deseo%20informacion%20de%20los%20productos">Desea información producto</a>
+            <a target="_blank" href="https://wa.me/34649599475?text=Desea%20informacion%20de%20los%20productos">Desea informacion de los productos</a>
           </p>
         </Media.Body>
       </Media>

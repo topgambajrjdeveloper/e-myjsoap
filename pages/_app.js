@@ -8,7 +8,8 @@ import {
   faBorderAll,
   faList,
   faSortNumericDown,
-  faSortNumericUp } from '@fortawesome/free-solid-svg-icons';
+  faSortNumericUp
+} from '@fortawesome/free-solid-svg-icons';
 
 config.autoAddCss = false;
 library.add(
@@ -25,7 +26,8 @@ import 'highlight.js/styles/darcula.css';
 import "react-toggle/style.css"
 import 'styles/index.scss';
 
-export default ({Component, pageProps}) =>
-  <ThemeProvider>
-    <Component {...pageProps} />
+
+export default ({ Component, pageProps }) =>
+  <ThemeProvider>    
+      <Component {...pageProps} />   
   </ThemeProvider>
